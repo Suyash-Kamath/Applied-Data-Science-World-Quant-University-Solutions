@@ -159,9 +159,8 @@ df.head()
 
 # 7.3.13
 
-pd.crosstab(index=df["group"])
-
-data = ...
+# Create a 2x2 contingency table of 'group' vs 'admitted'
+data = pd.crosstab(index=df["group"], columns=df["admitted"])
 
 print("data type:", type(data))
 print("data shape:", data.shape)
