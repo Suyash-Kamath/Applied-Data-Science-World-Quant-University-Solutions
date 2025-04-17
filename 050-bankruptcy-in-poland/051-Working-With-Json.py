@@ -143,3 +143,36 @@ print("First record in poland_data_gz['data']:", poland_data_gz['data'][0])
 # Confirm the number of entries in both 'data' keys
 print(f"Number of companies in poland_data: {len(poland_data['data'])}")
 print(f"Number of companies in poland_data_gz: {len(poland_data_gz['data'])}")
+
+
+
+# 5.1.14
+
+import pandas as pd
+
+# Extract the 'data' from the dictionary
+companies_data = poland_data_gz['data']  # You can use poland_data if not using the gzipped version
+
+# Create a DataFrame from the companies data
+df = pd.DataFrame(companies_data)
+
+# Ensure that 'company_id' is the index
+df.set_index('company_id', inplace=True)
+
+# Check the shape to ensure it's (9977, 65)
+print("Shape of the DataFrame:", df.shape)
+
+# Preview the first few rows of the DataFrame
+df.head()
+
+
+# 5.1.15
+
+def wrangle(filename):
+    
+    return df
+
+
+df = wrangle("data/poland-bankruptcy-data-2009.json.gz")
+print(df.shape)
+df.head()
